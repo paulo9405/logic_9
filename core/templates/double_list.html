@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{{ error }}
+
+<form action="{% url 'double_number' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="person_name">
+    <input type="text" name="value">
+
+    <button type="submit">Salvar</button>
+</form>
+
+<h1>Double list</h1>
+    <ul>
+        {%for item in doubles%}
+             <li>Name: {{item.name}} | value: {{item.value}} | Double: {{item.double_value}} </li>
+        {%endfor%}
+    </ul>
+</body>
+</html>
